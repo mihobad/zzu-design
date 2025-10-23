@@ -1,0 +1,10 @@
+{
+    "cSpell.words": [
+        "yuanjie"
+    ],
+    "editor.formatOnSave": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml",
+    }
+}
