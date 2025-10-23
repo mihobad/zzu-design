@@ -1,20 +1,25 @@
 {
-  "name": "k-design",
-  "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "scripts": {
-    "commitlint": "tsx scripts/commit-lint.ts",
-    "prepare": "husky"
-  },
-  "keywords": [],
-  "author": "yuanjie.dong",
-  "license": "ISC",
-  "packageManager": "pnpm@10.18.2",
-  "devDependencies": {
-    "@types/node": "^24.9.1",
-    "husky": "^9.1.7",
-    "rslog": "^1.3.0",
-    "tsx": "^4.20.6"
-  }
+    "name": "k-design",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "commitlint": "tsx scripts/commit-lint.ts",
+        "prepare": "husky",
+        "lint": "oxlint --fix",
+        "format": "prettier --write \"**/*.{vue,ts,js,json,css,scss,md}\""
+    },
+    "keywords": [],
+    "author": "yuanjie.dong",
+    "license": "ISC",
+    "packageManager": "pnpm@10.18.2",
+    "devDependencies": {
+        "@prettier/plugin-oxc": "^0.0.4",
+        "@types/node": "^24.9.1",
+        "husky": "^9.1.7",
+        "oxlint": "^1.24.0",
+        "prettier": "3.6.2",
+        "rslog": "^1.3.0",
+        "tsx": "^4.20.6"
+    }
 }

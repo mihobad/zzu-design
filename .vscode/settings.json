@@ -1,11 +1,8 @@
 {
-    "cSpell.words": [
-        "commitlint",
-        "yuanjie"
-    ],
+    "cSpell.words": ["commitlint", "yuanjie"],
     "editor.formatOnSave": true,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
-        "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml",
+        "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml"
     }
 }

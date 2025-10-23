@@ -1,1 +1,1 @@
-echo 'commit'
+pnpm lint && pnpm format
