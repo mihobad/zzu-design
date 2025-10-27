@@ -7,16 +7,23 @@
         "commitlint": "tsx scripts/commit-lint.ts",
         "prepare": "husky",
         "lint": "oxlint --fix",
-        "format": "prettier --write \"**/*.{vue,ts,js,json,css,scss,md}\""
+        "format": "prettier --write \"**/*.{vue,ts,js,json,css,scss,md}\" --ignore-unknown"
     },
     "keywords": [],
     "author": "yuanjie.dong",
     "license": "ISC",
     "packageManager": "pnpm@10.18.2",
+    "lint-staged": {
+        "*": [
+            "pnpm run lint",
+            "pnpm run format"
+        ]
+    },
     "devDependencies": {
         "@prettier/plugin-oxc": "^0.0.4",
         "@types/node": "^24.9.1",
         "husky": "^9.1.7",
+        "lint-staged": "^16.2.6",
         "oxlint": "^1.24.0",
         "prettier": "3.6.2",
         "rslog": "^1.3.0",

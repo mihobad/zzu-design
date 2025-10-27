@@ -1,0 +1,10 @@
+{
+    "extends": "../../tsconfig.json",
+    "include": ["tsdown.config.ts", "src"],
+    "compilerOptions": {
+        "outDir": "dist",
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "resolvePackageJsonImports": true
+    }
+}
