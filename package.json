@@ -4,7 +4,6 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "changeset": "changeset add",
         "commitlint": "tsx scripts/commit-lint.ts",
         "prepare": "husky",
         "lint": "oxlint --fix",
