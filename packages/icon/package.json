@@ -1,0 +1,49 @@
+{
+    "name": "@kg-design/icon",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": "./dist"
+    },
+    "files": [
+        "dist",
+        "package.json"
+    ],
+    "scripts": {
+        "generate": "tsx scripts/index.ts",
+        "dev": "tsdown --watch",
+        "build": "tsdown",
+        "prepublishOnly": "pnpm build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "packageManager": "pnpm@10.18.2",
+    "devDependencies": {
+        "@clack/prompts": "^0.11.0",
+        "@types/fs-extra": "^11.0.4",
+        "@types/jsdom": "^27.0.0",
+        "@types/node": "^24.9.2",
+        "fs-extra": "^11.3.2",
+        "glob": "^11.0.3",
+        "jsdom": "^27.0.1",
+        "rollup-plugin-scss": "^4.0.1",
+        "sass": "^1.93.2",
+        "svgo": "^4.0.0",
+        "tsdown": "^0.15.12",
+        "unplugin-vue": "^7.0.4",
+        "vue": "^3.5.22",
+        "vue-tsc": "^3.1.2"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.22"
+    },
+    "dependencies": {
+        "@kg-design/use": "workspace:*",
+        "@kg-design/utils": "workspace:*"
+    }
+}

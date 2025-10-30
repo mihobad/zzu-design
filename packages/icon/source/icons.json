@@ -1,0 +1,32 @@
+[
+    {
+        "name": "icon-chevron-up",
+        "componentName": "IconChevronUp",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/chevron-up.svg"
+    },
+    {
+        "name": "icon-chevron-right",
+        "componentName": "IconChevronRight",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/chevron-right.svg"
+    },
+    {
+        "name": "icon-chevron-left",
+        "componentName": "IconChevronLeft",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/chevron-left.svg"
+    },
+    {
+        "name": "icon-chevron-down",
+        "componentName": "IconChevronDown",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/chevron-down.svg"
+    },
+    {
+        "name": "icon-check",
+        "componentName": "IconCheck",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/check.svg"
+    },
+    {
+        "name": "icon-check-square",
+        "componentName": "IconCheckSquare",
+        "path": "/Users/suxinyi/Desktop/github/k-design/packages/icon/source/_svgs/check-square.svg"
+    }
+]
