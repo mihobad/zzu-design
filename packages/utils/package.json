@@ -1,0 +1,32 @@
+{
+    "name": "@kg-design/utils",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "package.json"
+    ],
+    "scripts": {
+        "dev": "tsdown --watch",
+        "build": "tsdown",
+        "typecheck": "tsc",
+        "prepublishOnly": "pnpm build"
+    },
+    "keywords": [
+        "utils"
+    ],
+    "author": "yuanjie.dong",
+    "license": "ISC",
+    "packageManager": "pnpm@10.18.2",
+    "devDependencies": {
+        "tsdown": "^0.15.9",
+        "vue": "^3.5.22"
+    },
+    "peerDependencies": {
+        "vue": "^3.5.22"
+    }
+}
