@@ -12,6 +12,9 @@
             "types": "./dist/index.d.ts"
         }
     },
+    "publishConfig": {
+        "registry": "http://npm-registry.zhihuishu.com:4873/"
+    },
     "files": [
         "dist",
         "package.json"
