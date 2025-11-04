@@ -69,7 +69,27 @@ importers:
                 specifier: ^0.15.6
                 version: 0.15.9(typescript@5.9.3)(vue-tsc@3.1.2(typescript@5.9.3))
 
-    packages/docs: {}
+    packages/docs:
+        dependencies:
+            '@kg-design/icon':
+                specifier: workspace:*
+                version: link:../icon
+            normalize.css:
+                specifier: ^8.0.1
+                version: 8.0.1
+            shiki:
+                specifier: ^3.14.0
+                version: 3.14.0
+            vue:
+                specifier: ^3.5.22
+                version: 3.5.22(typescript@5.9.3)
+        devDependencies:
+            glob:
+                specifier: ^11.0.3
+                version: 11.0.3
+            vite:
+                specifier: ^7.1.12
+                version: 7.1.12(@types/node@24.9.2)(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.93.2)(tsx@4.20.6)(yaml@2.8.1)
 
     packages/icon:
         devDependencies:
@@ -2460,6 +2480,9 @@ packages:
     normalize-range@0.1.2:
         resolution: { integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA== }
         engines: { node: '>=0.10.0' }
+
+    normalize.css@8.0.1:
+        resolution: { integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg== }
 
     now-and-later@3.0.0:
         resolution: { integrity: sha512-pGO4pzSdaxhWTGkfSfHx3hVzJVslFPwBp2Myq9MYN/ChfJZF87ochMAXnvz6/58RJSf5ik2q9tXprBBrk2cpcg== }
@@ -5658,6 +5681,8 @@ snapshots:
     normalize-path@3.0.0: {}
 
     normalize-range@0.1.2: {}
+
+    normalize.css@8.0.1: {}
 
     now-and-later@3.0.0:
         dependencies:

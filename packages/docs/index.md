@@ -3,22 +3,25 @@
 layout: home
 
 hero:
-    name: 'My Awesome Project'
+    name: 'KG Design'
     text: 'A VitePress Site'
     tagline: My great project tagline
     actions:
         - theme: brand
-          text: Markdown Examples
-          link: /markdown-examples
-        - theme: alt
-          text: API Examples
-          link: /api-examples
+          text: 快速开始
+          link: /readme/capp/index.md
 
 features:
-    - title: Feature A
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature B
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - title: Feature C
-      details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - title: Vite构建
+      details: 基于 Vite 生态
+      icon:
+          src: /vite.svg
+    - title: Vue3 + TypeScript
+      details: Vue3 & TSX，开发的组件库
+      icon:
+          src: /vue.svg
+    - title: Vitest - 单元测试
+      details: Vite全家桶支持，添加测试代码为开发保驾护航
+      icon:
+          src: /vitest.svg
 ---
