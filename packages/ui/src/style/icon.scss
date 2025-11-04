@@ -1,0 +1,30 @@
+@use 'mixins/mixins' as *;
+@use 'var' as *;
+
+.#{$namespace}-icon--right {
+    margin-left: 5px;
+}
+.#{$namespace}-icon--left {
+    margin-right: 5px;
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@include b(icon) {
+    display: block;
+    width: 1em;
+    height: 1em;
+    outline: none;
+    font-style: normal;
+
+    @include when(loading) {
+        animation: rotating 2s linear infinite;
+    }
+}
