@@ -214,6 +214,12 @@ importers:
                 specifier: ^3.5.22
                 version: 3.5.22(typescript@5.9.3)
 
+    packages/ui-auto-import-resolver:
+        devDependencies:
+            tsdown:
+                specifier: ^0.15.12
+                version: 0.15.12(typescript@5.9.3)(vue-tsc@3.1.2(typescript@5.9.3))
+
     packages/use:
         devDependencies:
             tsdown:
