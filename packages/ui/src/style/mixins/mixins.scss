@@ -1,10 +1,15 @@
+@use '../var' as *;
+@use 'function' as *;
+@use 'config' as *;
 // forward mixins
 @forward 'config';
 @forward 'function';
-
-@use 'config' as *;
+@forward '_var';
+@use 'sass:string';
+@use 'sass:map';
 
 $B: null;
+$E: null;
 
 @mixin when($state) {
     @at-root {
@@ -20,5 +25,44 @@ $B: null;
 
     .#{$B} {
         @content;
+    }
+}
+
+@mixin e($element) {
+    $E: $element !global;
+    $selector: &;
+    $currentSelector: '';
+    @each $unit in $element {
+        $currentSelector: #{$currentSelector + '.' + $B + $element-separator + $unit + ','};
+    }
+
+    @if hitAllSpecialNestRule($selector) {
+        @at-root {
+            #{$selector} {
+                #{$currentSelector} {
+                    @content;
+                }
+            }
+        }
+    } @else {
+        @at-root {
+            #{$currentSelector} {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin m($modifier) {
+    $selector: &;
+    $currentSelector: '';
+    @each $unit in $modifier {
+        $currentSelector: #{$currentSelector + $selector + $modifier-separator + $unit + ','};
+    }
+
+    @at-root {
+        #{$currentSelector} {
+            @content;
+        }
     }
 }

@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button,
+textarea {
+    color: inherit;
+    font: inherit;
+}
+
+a,
+input,
+button,
+textarea,
+[class*='kg-'] {
+    &:focus {
+        outline: none;
+    }
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

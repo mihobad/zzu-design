@@ -1,4 +1,6 @@
 @use 'config';
+@use 'sass:meta';
+@use 'sass:string';
 @use 'sass:math';
 @use 'sass:color';
 
@@ -11,6 +13,40 @@
     @return rgba($r, $g, $b, $a);
 }
 
+@function containsModifier($selector) {
+    $selector: selectorToString($selector);
+
+    @if string.index($selector, config.$modifier-separator) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function containWhenFlag($selector) {
+    $selector: selectorToString($selector);
+
+    @if string.index($selector, '.' + config.$state-prefix) {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function containPseudoClass($selector) {
+    $selector: selectorToString($selector);
+
+    @if string.index($selector, ':') {
+        @return true;
+    } @else {
+        @return false;
+    }
+}
+
+@function hitAllSpecialNestRule($selector) {
+    @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
 // join var name
 // joinVarName(('button', 'text-color')) => '--kg-button-text-color'
 @function joinVarName($list) {
@@ -21,6 +57,11 @@
         }
     }
     @return $name;
+}
+
+// getCssVarName('button', 'text-color') => '--kg-button-text-color'
+@function getCssVarName($args...) {
+    @return joinVarName($args);
 }
 
 // getCssVar('button', 'text-color') => var(--kg-button-text-color)
