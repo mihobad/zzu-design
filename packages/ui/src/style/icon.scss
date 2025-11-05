@@ -1,5 +1,5 @@
 @use 'mixins/mixins' as *;
-@use 'var' as *;
+@use 'common/var' as *;
 
 .#{$namespace}-icon--right {
     margin-left: 5px;

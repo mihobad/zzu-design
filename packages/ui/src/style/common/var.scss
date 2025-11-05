@@ -2,7 +2,7 @@
 @use 'sass:map';
 @use 'sass:color';
 
-@use './mixins/function' as *;
+@use '../mixins/function' as *;
 
 // types
 $types: primary, success, warning, danger, error, info;

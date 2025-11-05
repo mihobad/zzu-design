@@ -3,7 +3,7 @@
 
 @use 'config';
 @use 'function' as *;
-@use '../var' as *;
+@use '../common/var' as *;
 
 // set css var value, because we need translate value to string
 // for example:
