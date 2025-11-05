@@ -1,6 +1,6 @@
 {
     "cSpell.words": ["commitlint", "yuanjie"],
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
@@ -10,6 +10,9 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
