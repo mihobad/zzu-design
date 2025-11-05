@@ -21,8 +21,8 @@
         "package.json"
     ],
     "scripts": {
-        "generate": "tsx scripts/index.ts",
-        "start": "concurrently \"pnpm dev:style\" \"pnpm dev\"",
+        "start": "pnpm clean &&concurrently \"pnpm dev:style\" \"pnpm dev\"",
+        "clean": "rimraf ./dist",
         "dev": "tsdown --watch",
         "build": "tsdown && pnpm build:theme",
         "prepublishOnly": "pnpm build",
