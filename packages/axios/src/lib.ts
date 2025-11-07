@@ -14,6 +14,7 @@ import {
     type ResponseException,
 } from './type';
 import { decPendingRequest, incPendingRequest } from './utils';
+import { encrypt, addRepeat, removeRepeat, log } from './helpers';
 
 export const axios = Axios.create({
     baseURL: '',
@@ -24,12 +25,24 @@ export const axios = Axios.create({
     },
 });
 
-axios.interceptors.request.use((config: AxiosRequestConfig = {}): any => {
-    const { headers = {}, params = {}, data = {} } = config;
+axios.interceptors.request.use(async (config: AxiosRequestConfig & { encryption?: boolean; cancelEnable?: boolean } = {}): Promise<any> => {
+    const { headers = {}, params, data } = config;
+    const encryption = config.encryption ?? true;
+    const cancelEnable = config.cancelEnable ?? true;
 
     config.headers = headers;
     config.params = params;
     config.data = data;
+
+    if (cancelEnable) {
+        addRepeat(config);
+    }
+
+    if (encryption) {
+        await encrypt(config);
+    }
+
+    log.add(config);
 
     return config;
 });
@@ -43,10 +56,14 @@ axios.interceptors.request.use(undefined, (error) => {
 
 axios.interceptors.response.use(
     (res) => {
+        removeRepeat(res.config);
+        log.notify('SUCCESS', res);
         (res as any)[isAxiosResponse] = true;
         return res;
     },
     (err) => {
+        removeRepeat(err.config || {});
+        log.notify('FAIL', err);
         if (!err.request || !err.response) {
             err[isNetworkError] = true;
         } else {

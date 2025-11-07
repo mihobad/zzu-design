@@ -33,6 +33,8 @@ export interface FetchOptions {
     toastPending?: boolean | ToastOptions;
     toastError?: boolean | Omit<ToastOptions, 'message'>;
     errorMessageHandler?: (code: number | string, message: string) => string | undefined;
+    encryption?: boolean;
+    cancelEnable?: boolean;
 }
 
 export type FetchConfig = FetchOptions & Omit<AxiosRequestConfig, 'url'>;
