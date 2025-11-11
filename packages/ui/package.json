@@ -21,13 +21,11 @@
         "package.json"
     ],
     "scripts": {
-        "start": "pnpm clean &&concurrently \"pnpm dev:style\" \"pnpm dev\"",
+        "dev": "pnpm clean && concurrently \"gulp watch\" \"tsdown --watch\"",
         "clean": "rimraf ./dist",
-        "dev": "tsdown --watch",
-        "build": "tsdown && pnpm build:theme",
+        "build": "tsdown && pnpm build:style",
         "prepublishOnly": "pnpm build",
-        "build:style": "gulp",
-        "dev:style": "gulp watch"
+        "build:style": "gulp"
     },
     "keywords": [
         "kg-design",

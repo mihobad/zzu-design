@@ -1,0 +1,14 @@
+{
+    "$schema": "https://turbo.nodejs.cn/schema.json",
+    "tasks": {
+        "dev": {
+            "dependsOn": ["^build"],
+            "persistent": true,
+            "cache": false
+        },
+        "build": {
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"]
+        }
+    }
+}
