@@ -1,6 +1,6 @@
 {
     "name": "@zzu/utils",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "",
     "type": "module",
     "main": "dist/index.js",
