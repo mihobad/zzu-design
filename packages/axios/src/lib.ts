@@ -14,7 +14,7 @@ import {
     type ResponseException,
 } from './type';
 import { decPendingRequest, incPendingRequest } from './utils';
-import { encrypt, addRepeat, removeRepeat, log } from './helpers';
+import { addRepeat, removeRepeat, log } from './helpers';
 
 export const axios = Axios.create({
     baseURL: '',
@@ -25,9 +25,8 @@ export const axios = Axios.create({
     },
 });
 
-axios.interceptors.request.use(async (config: AxiosRequestConfig & { encryption?: boolean; cancelEnable?: boolean } = {}): Promise<any> => {
+axios.interceptors.request.use(async (config: AxiosRequestConfig & { cancelEnable?: boolean } = {}): Promise<any> => {
     const { headers = {}, params, data } = config;
-    const encryption = config.encryption ?? true;
     const cancelEnable = config.cancelEnable ?? true;
 
     config.headers = headers;
@@ -36,10 +35,6 @@ axios.interceptors.request.use(async (config: AxiosRequestConfig & { encryption?
 
     if (cancelEnable) {
         addRepeat(config);
-    }
-
-    if (encryption) {
-        await encrypt(config);
     }
 
     log.add(config);
