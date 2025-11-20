@@ -26,8 +26,7 @@
         "dev": "tsdown --watch",
         "build": "tsdown",
         "typecheck": "tsc",
-        "prepublishOnly": "pnpm build",
-        "prepare": "pnpm build"
+        "prepublishOnly": "pnpm build"
     },
     "devDependencies": {
         "@clack/prompts": "^0.11.0",

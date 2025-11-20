@@ -22,8 +22,7 @@
         "clean": "rimraf ./dist",
         "build": "tsdown && pnpm build:style",
         "prepublishOnly": "pnpm build",
-        "build:style": "gulp",
-        "prepare": "pnpm build"
+        "build:style": "gulp"
     },
     "keywords": [
         "zzu-design",
