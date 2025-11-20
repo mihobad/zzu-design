@@ -1,5 +1,11 @@
 # @zzu/create-app
 
+## 0.0.2
+
+### Patch Changes
+
+- abedf65: rename
+
 ## 0.0.3
 
 ### Patch Changes
