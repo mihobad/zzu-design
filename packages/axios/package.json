@@ -19,7 +19,9 @@
     "keywords": [
         "axios"
     ],
-    "access": "public",
+    "publishConfig": {
+        "access": "public"
+    },
     "author": "yuanjie.dong",
     "license": "ISC",
     "packageManager": "pnpm@10.18.2",
