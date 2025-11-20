@@ -13,7 +13,7 @@
 import { getCurrentInstance } from 'vue';
 
 defineOptions({
-    name: 'DocKgIcon',
+    name: 'DocZzuIcon',
 });
 
 const appComponents = getCurrentInstance()?.appContext?.components || {};

@@ -1,7 +1,7 @@
 import type { App, Plugin } from 'vue';
-import { KgDivider } from './divider';
+import { ZzuDivider } from './divider';
 
-const components = [KgDivider];
+const components = [ZzuDivider];
 
 const makeInstaller = (components: Plugin[] = []) => {
     return {

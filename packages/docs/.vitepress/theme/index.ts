@@ -1,7 +1,7 @@
 import './style.ts';
 import DefaultTheme from 'vitepress/theme';
 import CodePreview from '../components/code-preview/index.vue';
-import KgIcon from '@kg-design/icon';
+import ZuuIcon from '@zzu/icon';
 
 import type { EnhanceAppContext } from 'vitepress';
 
@@ -10,7 +10,7 @@ export default {
     enhanceApp(options: EnhanceAppContext) {
         const { app } = options;
         app.component('code-preview', CodePreview);
-        app.use(KgIcon, {
+        app.use(ZuuIcon, {
             iconPrefix: '$$',
         });
     },

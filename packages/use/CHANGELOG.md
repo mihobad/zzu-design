@@ -1,4 +1,4 @@
-# @kg-design/use
+# @zzu/use
 
 ## 1.0.1
 

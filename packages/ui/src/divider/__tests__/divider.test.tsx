@@ -18,7 +18,7 @@ describe('Divider.vue', () => {
 
     test('direction', () => {
         const wrapper = mount(() => <Divider direction="vertical" />);
-        expect(wrapper.classes()).toContain('kg-divider--vertical');
+        expect(wrapper.classes()).toContain('zzu-divider--vertical');
     });
 
     test('contentPosition', () => {
@@ -30,7 +30,7 @@ describe('Divider.vue', () => {
                 contentPosition="right"
             />
         ));
-        expect(wrapper.find('.kg-divider__text').classes()).toContain('is-right');
+        expect(wrapper.find('.zzu-divider__text').classes()).toContain('is-right');
     });
 
     test('customClass', () => {
@@ -40,11 +40,11 @@ describe('Divider.vue', () => {
 
     test('line-dashed', () => {
         const wrapper = mount(() => <Divider borderStyle="dashed" />);
-        expect(getComputedStyle(wrapper.element, null).getPropertyValue('--kg-border-style')).toBe('dashed');
+        expect(getComputedStyle(wrapper.element, null).getPropertyValue('--zzu-border-style')).toBe('dashed');
     });
 
     test('line-solid', () => {
         const wrapper = mount(() => <Divider direction="vertical" />);
-        expect(getComputedStyle(wrapper.element, null).getPropertyValue('--kg-border-style')).toBe('solid');
+        expect(getComputedStyle(wrapper.element, null).getPropertyValue('--zzu-border-style')).toBe('solid');
     });
 });

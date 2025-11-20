@@ -1,4 +1,4 @@
-# @kg-design/icon
+# @zzu/icon
 
 ## 1.0.1
 

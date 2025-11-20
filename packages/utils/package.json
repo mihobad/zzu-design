@@ -1,14 +1,11 @@
 {
-    "name": "@kg-design/utils",
+    "name": "@zzu/utils",
     "version": "1.0.1",
     "description": "",
     "type": "module",
     "main": "dist/index.js",
     "module": "dist/index.js",
     "typings": "dist/index.d.ts",
-    "publishConfig": {
-        "registry": "http://npm-registry.zhihuishu.com:4873/"
-    },
     "files": [
         "dist",
         "package.json"
@@ -17,7 +14,8 @@
         "dev": "tsdown --watch",
         "build": "tsdown",
         "typecheck": "tsc",
-        "prepublishOnly": "pnpm build"
+        "prepublishOnly": "pnpm build",
+        "prepare": "pnpm build"
     },
     "keywords": [
         "utils"

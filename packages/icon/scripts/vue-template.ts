@@ -21,7 +21,7 @@ export function replaceColorsWithCssVars(svgHtml: string, colors: string[]): str
 
     colors.forEach((color, index) => {
         const colorRegex = new RegExp(`(stroke|fill)="${color}"`, 'g');
-        modifiedSvg = modifiedSvg.replace(colorRegex, `$1="var(--kg-icon-color-${index}, ${color})"`);
+        modifiedSvg = modifiedSvg.replace(colorRegex, `$1="var(--zzu-icon-color-${index}, ${color})"`);
     });
 
     return modifiedSvg;
@@ -39,8 +39,8 @@ export const getIconVue = ({ name, componentName, svgHtml }: { name: string; com
 <script setup lang="ts">
 import { computed, type CSSProperties } from 'vue';
 import { iconEmits, iconProps } from '../type';
-import { useNamespace } from '@kg-design/use';
-import { addUnit, isUndefined } from '@kg-design/utils';
+import { useNamespace } from '@zzu/use';
+import { addUnit, isUndefined } from '@zzu/utils';
 
 defineOptions({
     name: '${componentName}'
@@ -65,7 +65,7 @@ const innerStyle = computed(() => {
     if (color) {
         const colors = Array.isArray(color) ? color : [color];
         colors.forEach((color, index) => {
-            styles[\`--kg-icon-color-\${index}\`] = color;
+            styles[\`--zzu-icon-color-\${index}\`] = color;
         });
     }
 
@@ -137,8 +137,8 @@ export type IconEmits = typeof iconEmits;`;
 };
 
 export const getIconIndex = ({ name, componentName }: { name: string; componentName: string }) => {
-    return `import { withInstall } from '@kg-design/utils';
-import type { SFCWithInstall } from '@kg-design/utils';
+    return `import { withInstall } from '@zzu/utils';
+import type { SFCWithInstall } from '@zzu/utils';
 import _${componentName} from './${name}.vue';
 
 export const ${componentName}: SFCWithInstall<typeof _${componentName}> = withInstall(_${componentName});
@@ -154,14 +154,14 @@ declare module 'vue' {
 
 export const getIcon = ({ imports, components }: { imports: string[]; components: string[] }) => {
     return `import type { App, Plugin } from 'vue';
-import type { KgIconOptions } from '@kg-design/utils';
+import type { ZzuIconOptions } from '@zzu/utils';
 ${imports.join('\n')}
 
 const icons: Record<string, Plugin> = {
     ${components.join(',\n    ')}
 };
 
-const install = (app: App, options?: KgIconOptions) => {
+const install = (app: App, options?: ZzuIconOptions) => {
     for (const key of Object.keys(icons)) {
         app.use(icons[key], options);
     }

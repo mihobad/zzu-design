@@ -56,7 +56,7 @@ $color-info: map.get($colors, 'info', 'base') !default;
 }
 
 // $colors.primary.light-i
-// --kg-color-primary-light-i
+// --zzu-color-primary-light-i
 // 10% 53a8ff
 // 20% 66b1ff
 // 30% 79bbff
@@ -72,7 +72,7 @@ $color-info: map.get($colors, 'info', 'base') !default;
     }
 }
 
-// --kg-color-primary-dark-2
+// --zzu-color-primary-dark-2
 @each $type in $types {
     @include set-color-mix-level($type, 2, 'dark', $color-black);
 }

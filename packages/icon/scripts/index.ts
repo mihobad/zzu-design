@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { globSync } from 'glob';
 import { optimize } from 'svgo';
 import { JSDOM } from 'jsdom';
-import { toPascalCase } from '@kg-design/utils';
+import { toPascalCase } from '@zzu/utils';
 import { svgoConfig } from './svgo.config';
 import { getIconIndex, getIconType, getIconVue, getIcon, getIndex } from './vue-template';
 
@@ -102,7 +102,7 @@ async function buildIndex(data: IconData[]) {
 //     const exports = [];
 
 //     for (const item of data) {
-//         exports.push(`${item.componentName}: typeof import('@kg-design/icon')['${item.componentName}'];`);
+//         exports.push(`${item.componentName}: typeof import('@zzu/icon')['${item.componentName}'];`);
 //     }
 
 //     const typeContent = getType({ exports });

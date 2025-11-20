@@ -5,7 +5,7 @@
 ## 全局安装
 
 ```
-pnpm  i @kg-design/create-app -g
+pnpm  i @zzu/create-app -g
 
 ```
 

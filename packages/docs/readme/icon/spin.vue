@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { IconRotateCw } from '@kg-design/icon';
+import { IconRotateCw } from '@zzu/icon';
 
 defineOptions({
-    name: 'DocKgIconSpin',
+    name: 'DocZzuIconSpin',
     components: {
         IconRotateCw,
     },

@@ -11,17 +11,17 @@ html.dark {
         @include set-css-color-type($colors, $type);
     }
 
-    // --kg-box-shadow-#{$type}
+    // --zzu-box-shadow-#{$type}
     @include set-component-css-var('box-shadow', $box-shadow);
 
     // color-scheme
-    // Background --kg-bg-color-#{$type}
+    // Background --zzu-bg-color-#{$type}
     @include set-component-css-var('bg-color', $bg-color);
-    // --kg-text-color-#{$type}
+    // --zzu-text-color-#{$type}
     @include set-component-css-var('text-color', $text-color);
-    // --kg-border-color-#{$type}
+    // --zzu-border-color-#{$type}
     @include set-component-css-var('border-color', $border-color);
-    // Fill --kg-fill-color-#{$type}
+    // Fill --zzu-fill-color-#{$type}
     @include set-component-css-var('fill-color', $fill-color);
     @include set-component-css-var('mask-color', $mask-color);
 }

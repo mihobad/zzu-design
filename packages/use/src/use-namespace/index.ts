@@ -1,7 +1,7 @@
 import { computed, getCurrentInstance, inject, ref, unref } from 'vue';
 import type { InjectionKey, Ref } from 'vue';
 
-export const defaultNamespace = 'kg';
+export const defaultNamespace = 'zuu';
 const statePrefix = 'is-';
 
 const _bem = (namespace: string, block: string, blockSuffix: string, element: string, modifier: string) => {
@@ -49,7 +49,7 @@ export const useNamespace = (block: string, namespaceOverrides?: Ref<string | un
     };
 
     // for css var
-    // --kg-xxx: value;
+    // --zzu-xxx: value;
     const cssVar = (object: Record<string, string>) => {
         const styles: Record<string, string> = {};
         for (const key in object) {

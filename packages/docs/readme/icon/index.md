@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DocKgIcon from './icons.vue'
+import DocZzuIcon from './icons.vue'
 </script>
 
 # 图标 Icon
@@ -8,19 +8,19 @@ import DocKgIcon from './icons.vue'
 
 ## 基础使用
 
-KgUi图标是一个独立的库，需要额外引入并注册使用。
+ZzuDesign图标是一个独立的库，需要额外引入并注册使用。
 ::: code-group
 
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
-import KgUi from '@kg-design/ui';
-import KgIcon from '@kg-design/icon';
-import '@kg-design/ui/style/index.css';
+import ZzuUi from '@zzu/ui';
+import ZzuIcon from '@zzu/icon';
+import '@zzu/ui/style/index.css';
 
 const app = createApp(App);
-app.use(KgUi);
-app.use(KgIcon);
+app.use(ZzuUi);
+app.use(ZzuIcon);
 app.mount('#app');
 ```
 
@@ -60,4 +60,4 @@ spin.vue
 
 ## 图标列表
 
-<DocKgIcon />
+<DocZzuIcon />

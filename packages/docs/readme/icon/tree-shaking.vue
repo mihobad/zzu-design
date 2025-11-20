@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import { IconCheck } from '@kg-design/icon';
+import { IconCheck } from '@zzu/icon';
 
 defineOptions({
-    name: 'DocKgTreeShaking',
+    name: 'DocZzuTreeShaking',
     components: {
         IconCheck,
     },

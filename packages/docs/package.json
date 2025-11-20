@@ -15,8 +15,8 @@
     "license": "ISC",
     "packageManager": "pnpm@10.18.2",
     "dependencies": {
-        "@kg-design/icon": "workspace:*",
-        "@kg-design/ui": "workspace:*",
+        "@zzu/icon": "workspace:*",
+        "@zzu/ui": "workspace:*",
         "normalize.css": "^8.0.1",
         "shiki": "^3.14.0",
         "vue": "^3.5.22"

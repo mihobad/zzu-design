@@ -26,7 +26,7 @@ const cwd = process.cwd();
 const helpMessage = `\
 Usage: capp [OPTION]... [DIRECTORY]
 
-Create a new KG H5 project in JavaScript or TypeScript.
+Create a new ZUU H5 project in JavaScript or TypeScript.
 With no arguments, start the CLI in interactive mode.
 
 Options:
@@ -76,7 +76,7 @@ const renameFiles: Record<string, string | undefined> = {
     _npmrc: '.npmrc',
 };
 
-const defaultTargetDir = 'kg-app';
+const defaultTargetDir = 'zuu-app';
 const registry = 'http://npm-registry.zhihuishu.com:4873/';
 
 const packageManagerShell = {

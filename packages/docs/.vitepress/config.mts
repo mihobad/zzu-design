@@ -16,7 +16,7 @@ export const generateSideBar = (components: { text: string; link: string }[]) =>
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-    title: 'KG Design',
+    title: 'Zzu Design',
     description: 'A VitePress Site',
     themeConfig: {
         nav: [{ text: '首页', link: '/' }],

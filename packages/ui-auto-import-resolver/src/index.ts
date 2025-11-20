@@ -1,4 +1,4 @@
-export interface KgUiResolverOptions {
+export interface ZzuUiResolverOptions {
     /**
      * default: true
      */
@@ -13,26 +13,26 @@ function kebabCase(key: string) {
     return result.split(' ').join('-').toLowerCase();
 }
 
-function getSideEffects(dirName: string, options: KgUiResolverOptions) {
+function getSideEffects(dirName: string, options: ZzuUiResolverOptions) {
     const { importStyle = true } = options;
 
     if (!importStyle) {
         return;
     }
 
-    return `@kg-design/ui/${dirName}/style/index`;
+    return `@zzu/ui/${dirName}/style/index`;
 }
 
-export function KgUiResolver(options: KgUiResolverOptions = {}) {
+export function ZzuUiResolver(options: ZzuUiResolverOptions = {}) {
     return {
         type: 'component' as const,
         resolve: (name: string) => {
-            if (name.startsWith('Kg')) {
-                const partialName = name.slice(2);
+            if (name.startsWith('Zzu')) {
+                const partialName = name.slice(3);
 
                 return {
                     name: name,
-                    from: `@kg-design/ui`,
+                    from: `@zzu/ui`,
                     sideEffects: getSideEffects(kebabCase(partialName), options),
                 };
             }

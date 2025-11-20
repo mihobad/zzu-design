@@ -20,10 +20,10 @@
     @include set-css-var-value('font-weight-primary', 500);
     @include set-css-var-value('font-line-height-primary', 24px);
 
-    // z-index --kg-index-#{$type}
+    // z-index --zzu-index-#{$type}
     @include set-component-css-var('index', $z-index);
 
-    // --kg-border-radius-#{$type}
+    // --zzu-border-radius-#{$type}
     @include set-component-css-var('border-radius', $border-radius);
 }
 
@@ -37,17 +37,17 @@
     }
 
     // color-scheme
-    // Background --kg-bg-color-#{$type}
+    // Background --zzu-bg-color-#{$type}
     @include set-component-css-var('bg-color', $bg-color);
-    // --kg-text-color-#{$type}
+    // --zzu-text-color-#{$type}
     @include set-component-css-var('text-color', $text-color);
-    // --kg-border-color-#{$type}
+    // --zzu-border-color-#{$type}
     @include set-component-css-var('border-color', $border-color);
-    // Fill --kg-fill-color-#{$type}
+    // Fill --zzu-fill-color-#{$type}
     @include set-component-css-var('fill-color', $fill-color);
 
     // Box-shadow
-    // --kg-box-shadow-#{$type}
+    // --zzu-box-shadow-#{$type}
     @include set-component-css-var('box-shadow', $box-shadow);
     // Disable base
     @include set-component-css-var('disabled', $disabled);

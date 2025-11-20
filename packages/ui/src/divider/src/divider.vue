@@ -8,12 +8,12 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useNamespace } from '@kg-design/use';
+import { useNamespace } from '@zzu/use';
 import { dividerProps } from './type';
 import type { CSSProperties } from 'vue';
 
 defineOptions({
-    name: 'KgDivider',
+    name: 'ZzuDivider',
 });
 
 const { direction, contentPosition, borderStyle } = defineProps(dividerProps);

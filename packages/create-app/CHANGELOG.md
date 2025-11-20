@@ -1,4 +1,4 @@
-# @kg-design/create-app
+# @zzu/create-app
 
 ## 0.0.3
 

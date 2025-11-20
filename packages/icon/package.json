@@ -1,5 +1,5 @@
 {
-    "name": "@kg-design/icon",
+    "name": "@zzu/icon",
     "version": "1.0.1",
     "description": "",
     "type": "module",
@@ -12,9 +12,6 @@
             "types": "./dist/index.d.ts"
         }
     },
-    "publishConfig": {
-        "registry": "http://npm-registry.zhihuishu.com:4873/"
-    },
     "files": [
         "dist",
         "package.json"
@@ -23,7 +20,8 @@
         "generate": "tsx scripts/index.ts",
         "dev": "tsdown --watch",
         "build": "tsdown",
-        "prepublishOnly": "pnpm build"
+        "prepublishOnly": "pnpm build",
+        "prepare": "pnpm generate && pnpm build"
     },
     "keywords": [
         "icon"
@@ -33,8 +31,8 @@
     "packageManager": "pnpm@10.18.2",
     "devDependencies": {
         "@clack/prompts": "^0.11.0",
-        "@kg-design/use": "workspace:*",
-        "@kg-design/utils": "workspace:*",
+        "@zzu/use": "workspace:*",
+        "@zzu/utils": "workspace:*",
         "@types/fs-extra": "^11.0.4",
         "@types/jsdom": "^27.0.0",
         "@types/node": "^24.9.2",
