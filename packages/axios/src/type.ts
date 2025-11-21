@@ -16,14 +16,14 @@ export const SUCCESS_CODE: number = 200;
 export const DEFAULT_ERROR_MSG = '网络错误，请稍后再试';
 
 export interface ResponseData<T = unknown> {
-    code: string | number;
+    retcode: string | number;
     data: T;
     message: string;
     traceId: string;
 }
 
 export interface ResponseException {
-    code: string | number;
+    retcode: string | number;
     data: null;
     message: string;
     traceId: string;
@@ -32,7 +32,7 @@ export interface ResponseException {
 export interface FetchOptions {
     toastPending?: boolean | ToastOptions;
     toastError?: boolean | Omit<ToastOptions, 'message'>;
-    errorMessageHandler?: (code: number | string, message: string) => string | undefined;
+    errorMessageHandler?: (retcode: number | string, message: string) => string | undefined;
     encryption?: boolean;
     cancelEnable?: boolean;
 }

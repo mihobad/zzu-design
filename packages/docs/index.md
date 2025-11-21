@@ -9,7 +9,7 @@ hero:
     actions:
         - theme: brand
           text: 快速开始
-          link: /readme/capp/index.md
+          link: /demos/capp/index.md
 
 features:
     - title: Vite构建

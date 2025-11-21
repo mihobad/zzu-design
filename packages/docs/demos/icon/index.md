@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import DocZzuIcon from './icons.vue'
-</script>
-
 # 图标 Icon
 
 内置常用图标
@@ -60,4 +56,6 @@ spin.vue
 
 ## 图标列表
 
-<DocZzuIcon />
+::: code-preview
+icons.vue
+:::

@@ -12,12 +12,15 @@ export default defineConfig({
         sidebar: [
             {
                 text: '工具库',
-                items: [{ text: 'create-app', link: '/readme/capp/index.md' }],
+                items: [
+                    { text: 'create-app', link: '/demos/capp/index.md' },
+                    { text: 'axios', link: '/demos/axios/index.md' },
+                ],
             },
             {
                 text: '组件库',
                 items: [
-                    { text: 'Icon', link: '/readme/icon/index.md' },
+                    { text: 'Icon', link: '/demos/icon/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
                 ],
             },

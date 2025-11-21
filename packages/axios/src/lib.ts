@@ -14,7 +14,7 @@ import {
     type ResponseException,
 } from './type';
 import { decPendingRequest, incPendingRequest } from './utils';
-import { addRepeat, removeRepeat, log } from './helpers';
+import { addRepeat, removeRepeat, log, handleLogin, handleRefreshToken } from './helpers';
 
 export const axios = Axios.create({
     baseURL: '',
@@ -26,7 +26,7 @@ export const axios = Axios.create({
 });
 
 axios.interceptors.request.use(async (config: AxiosRequestConfig & { cancelEnable?: boolean } = {}): Promise<any> => {
-    const { headers = {}, params, data } = config;
+    const { headers = {}, params = {}, data = {} } = config;
     const cancelEnable = config.cancelEnable ?? true;
 
     config.headers = headers;
@@ -70,7 +70,7 @@ axios.interceptors.response.use(
 
 // 通过标记判断 error 是否为 code 不为 200 所抛出的错误，并为 error 添加类型提示
 function isResponseException(error: any): error is AxiosResponse<{
-    code: number | string;
+    retcode: number | string;
     message: string;
 }> & {
     [needAttention]?: true;
@@ -99,7 +99,7 @@ export async function fetch<R>(
             let msg: string = '';
             if (isResponseException(e)) {
                 const { message } = e?.data || {};
-                msg = errorMessageHandler?.(e?.data?.code, message) || message || '';
+                msg = errorMessageHandler?.(e?.data?.retcode, message) || message || '';
             } else if (e?.code === 'ERR_CANCELED') {
                 msg = '';
             } else {
@@ -133,9 +133,17 @@ export async function handleResponseCommon<T>(
     }
 
     const res = responseOrPromise;
-    // TODO: 刷新token
 
-    if (Number(res.data?.code) !== SUCCESS_CODE) {
+    // 刷新token再次请求
+    const refreshRes = await handleRefreshToken(res, fetch);
+    if (refreshRes) {
+        return refreshRes;
+    }
+
+    // 处理未登录逻辑
+    await handleLogin(res);
+
+    if (Number(res.data?.retcode) !== SUCCESS_CODE) {
         // success 表示成功 其他都进入异常
         if (showError) {
             (res as any)[needAttention] = true;
