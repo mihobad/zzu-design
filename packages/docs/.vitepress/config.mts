@@ -18,6 +18,7 @@ export const generateSideBar = (components: { text: string; link: string }[]) =>
 export default defineConfig({
     title: 'Zzu Design',
     description: 'A VitePress Site',
+    outDir: resolve(__dirname, '../dist'),
     themeConfig: {
         nav: [{ text: '首页', link: '/' }],
 

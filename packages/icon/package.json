@@ -22,8 +22,8 @@
     "scripts": {
         "generate": "tsx scripts/index.ts",
         "dev": "tsdown --watch",
-        "build": "tsdown",
-        "prepublishOnly": "pnpm generate && pnpm build"
+        "build": "pnpm generate && tsdown",
+        "prepublishOnly": "pnpm build"
     },
     "keywords": [
         "icon"
