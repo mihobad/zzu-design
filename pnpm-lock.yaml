@@ -203,6 +203,13 @@ importers:
                 version: 3.1.2(typescript@5.9.3)
 
     packages/ui:
+        dependencies:
+            '@zzu/use':
+                specifier: workspace:*
+                version: link:../use
+            '@zzu/utils':
+                specifier: workspace:*
+                version: link:../utils
         devDependencies:
             '@types/gulp':
                 specifier: ^4.0.18
