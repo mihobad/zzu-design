@@ -95,7 +95,7 @@ async function buildIndex(data: IconData[]) {
 
     fs.outputFileSync(path.join(cwd, 'src', 'icon.ts'), IconContent);
     fs.outputFileSync(path.join(cwd, 'src', 'index.ts'), indexContent);
-    fs.outputFileSync(path.join(cwd, 'source', 'icons.json'), JSON.stringify(data, null, 2));
+    fs.outputFileSync(path.join(cwd, 'source', 'icons.json'), JSON.stringify(data, null, 4) + '\n');
 }
 
 // async function buildType(data: IconData[]) {
