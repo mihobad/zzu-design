@@ -11,7 +11,6 @@ import postcss from 'postcss';
 import cssnano from 'cssnano';
 import consola from 'consola';
 import chalk from 'chalk';
-import type { TaskFunction } from 'gulp';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
@@ -109,14 +108,12 @@ function autoImportStyle() {
         .pipe(dest((file) => file.dirname));
 }
 
-export const build: TaskFunction = parallel(series(buildThemeChalk, copyThemeSource, mergeThemeStyle, autoImportStyle));
+export const build = parallel(series(buildThemeChalk, copyThemeSource, mergeThemeStyle, autoImportStyle));
 
 export function watch() {
-    // @ts-ignore
     build();
     return gulpWatch(path.resolve(__dirname, 'src/**/*.scss'), function (cb) {
         consola.info('scss file changed, start build...');
-        // @ts-ignore
         build();
         cb();
     });
