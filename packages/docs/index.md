@@ -4,8 +4,8 @@ layout: home
 
 hero:
     name: 'Zzu Design'
-    text: 'A VitePress Site'
-    tagline: My great project tagline
+    text: 'A UI Library for Vue3'
+    tagline: 基于 Vue3 & TypeScript 开发的 UI 组件库
     actions:
         - theme: brand
           text: 快速开始

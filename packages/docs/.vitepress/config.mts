@@ -4,18 +4,18 @@ import { codePreviewPlugin } from './plugins/code-preview-plugin';
 
 export default defineConfig({
     title: 'Zzu Design',
-    description: 'A VitePress Site',
+    description: 'UI Design System',
     outDir: resolve(__dirname, '../dist'),
     themeConfig: {
         nav: [{ text: '首页', link: '/' }],
 
         sidebar: [
             {
-                text: '工具',
+                text: '工具库',
                 items: [{ text: 'create-app', link: '/readme/capp/index.md' }],
             },
             {
-                text: '组件',
+                text: '组件库',
                 items: [
                     { text: 'Icon', link: '/readme/icon/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
