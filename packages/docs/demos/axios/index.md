@@ -4,28 +4,39 @@
 
 ## Usage
 
-```js
-import { axios, type FetchConfig } from '@zzu/axios'
+```ts
+import axios, { type FetchConfig } from '@zzu/axios';
+import { ref } from 'vue';
 
-interface deviceInfoIns {
-  deviceId: string
+const pages = ref<Page[]>([]);
+
+interface Page {
+    id: string;
+    page_id: string;
+    status: number;
+    page_name: string;
+    description: string;
 }
 
-function fetchDevice(config: FetchConfig = {}): Promise<deviceInfoIns> {
-  return axios('xxx', {
-    method: 'get',
-    ...config
-  })
+interface pageInfoIns {
+    list: Page[];
 }
 
-const initDevice = async () => {
-  const res = await fetchDevice({
-    params: {}
-  })
-  console.log(res)
+function fetchPages(config: FetchConfig = {}): Promise<pageInfoIns> {
+    return axios('http://localhost:3001/api/pages/list', {
+        method: 'get',
+        ...config,
+    });
 }
 
-initDevice()
+const initPages = async () => {
+    const res = await fetchPages({
+        params: {},
+    });
+    pages.value = res?.list || [];
+};
+
+initPages();
 ```
 
 ### FetchConfig
@@ -37,6 +48,7 @@ initDevice()
 | headers             | Record<string, string>                                              | {}     | 请求头                   | 否       |
 | params              | Record<string, any>                                                 | {}     | 查询参数                 | 否       |
 | data                | Record<string, any>                                                 | {}     | 请求体                   | 否       |
+| cancelEnable        | boolean                                                             | true   | 是否开启取消请求         | 否       |
 | toastPending        | boolean                                                             | false  | 是否显示透明遮罩阻止连点 | 否       |
-| toastError          | boolean                                                             | false  | 是否显示错误提示         | 否       |
+| toastError          | boolean                                                             | true   | 是否显示错误提示         | 否       |
 | errorMessageHandler | (retcode: number \| string, message: string) => string \| undefined | -      | 自定义错误处理           | 否       |

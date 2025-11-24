@@ -8,15 +8,13 @@ const COLORS = {
 const DEV_LOG = {
     cache: new Map<string, any>(),
 
-    add: function (config: AxiosRequestConfig & { __data?: any; __params?: any }) {
-        const { url = '', method, headers, __data, __params, data, params } = config;
+    add: function (config: AxiosRequestConfig) {
+        const { url = '', method, headers, data, params } = config;
         this.cache.set(url, {
             method,
             headers,
             data,
             params,
-            __data,
-            __params,
         });
     },
 
@@ -29,15 +27,16 @@ const DEV_LOG = {
         }
 
         const color = COLORS[type];
+        const isSuccess = type === 'SUCCESS';
         console.groupCollapsed(`%c[Axios][${type}] ${url}`, color);
         console.log('%cRequest Method:', color, info.method);
         console.log('%cRequest Headers:', color, info.headers);
         if (info.method === 'get') {
-            console.log('%cRequest Params:', color, info.__params || info.params);
-            console.log('%cRequest Secret:', color, info.params);
+            console.log('%cRequest Params:', color, info.params);
+            console.log('%cResponse Data:', color, isSuccess ? response.data : response?.response?.data);
         } else {
-            console.log('%cRequest Data:', color, info.__data || info.data);
-            console.log('%cRequest Secret:', color, info.data);
+            console.log('%cRequest Data:', color, info.data);
+            console.log('%cResponse Data:', color, isSuccess ? response.data : response?.response?.data);
         }
         console.groupEnd();
     },

@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from 'axios';
 
-/** 标记响应数据中 code 不为 200 时需要注意 */
+/** 标记响应数据中 retcode 不为 0 时需要注意 */
 export const needAttention = Symbol('needAttention');
 /** 标记未成功发起 request 时产生的错误 */
 export const isRequestError = Symbol('isRequestError');
@@ -11,7 +11,7 @@ export const isNetworkError = Symbol('isNetworkError');
 /**标记成功收到响应，但 http code 不为 2xx */
 export const isResponseError = Symbol('isResponseError');
 
-export const SUCCESS_CODE: number = 200;
+export const SUCCESS_CODE: number = 0;
 
 export const DEFAULT_ERROR_MSG = '网络错误，请稍后再试';
 

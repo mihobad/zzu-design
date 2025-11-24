@@ -68,7 +68,7 @@ axios.interceptors.response.use(
     },
 );
 
-// 通过标记判断 error 是否为 code 不为 200 所抛出的错误，并为 error 添加类型提示
+// 通过标记判断 error 是否为 retcode 不为 0 所抛出的错误，并为 error 添加类型提示
 function isResponseException(error: any): error is AxiosResponse<{
     retcode: number | string;
     message: string;
@@ -80,7 +80,7 @@ function isResponseException(error: any): error is AxiosResponse<{
 
 export async function fetch<R>(
     url: string,
-    { toastPending = false, toastError = false, method = 'get', errorMessageHandler, ...axiosConfig }: FetchConfig = {},
+    { toastPending = false, toastError = true, method = 'get', errorMessageHandler, ...axiosConfig }: FetchConfig = {},
 ) {
     //TODO: 处理 toastPendingOptions
     const toastPendingOptions = toastPending;
@@ -92,13 +92,15 @@ export async function fetch<R>(
         const data = await handleResponseCommon(await axios.request<ResponseData<R> & ResponseException>({ ...axiosConfig, url, method }), {
             showError: !!toastError,
         });
-
         return data;
     } catch (e: any) {
         if (toastError) {
             let msg: string = '';
+            console.log(e);
+            console.log(isResponseException(e));
             if (isResponseException(e)) {
                 const { message } = e?.data || {};
+                console.log(message);
                 msg = errorMessageHandler?.(e?.data?.retcode, message) || message || '';
             } else if (e?.code === 'ERR_CANCELED') {
                 msg = '';
@@ -121,7 +123,7 @@ export async function fetch<R>(
 export function isPromise<T>(p: MaybePromise<T>): p is Promise<T> {
     return typeof (p as Promise<T>).then === 'function';
 }
-// 处理 response 的通用逻辑 code === 200 时返回 res.data.data, 否则抛出异常
+// 处理 response 的通用逻辑 retcode === 0 时返回 res.data.data, 否则抛出异常
 export function handleResponseCommon<T>(response: AxiosResponse<ResponseData<T> & ResponseException>, options?: { showError?: boolean }): T;
 export function handleResponseCommon<T>(response: Promise<AxiosResponse<ResponseData<T> & ResponseException>>, options?: { showError?: boolean }): Promise<T>;
 export async function handleResponseCommon<T>(
@@ -142,8 +144,7 @@ export async function handleResponseCommon<T>(
 
     // 处理未登录逻辑
     await handleLogin(res);
-
-    if (Number(res.data?.retcode) !== SUCCESS_CODE) {
+    if (res.data?.retcode !== SUCCESS_CODE) {
         // success 表示成功 其他都进入异常
         if (showError) {
             (res as any)[needAttention] = true;
@@ -151,7 +152,6 @@ export async function handleResponseCommon<T>(
         // 将 response 作为异常抛出以保留完整请求信息
         throw res;
     }
-
     return res.data.data;
 }
 
