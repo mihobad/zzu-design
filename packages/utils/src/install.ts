@@ -2,15 +2,15 @@ import type { App, Component, Plugin } from 'vue';
 
 export type SFCWithInstall<T> = T & Plugin;
 
-export interface ZzuIconOptions {
-    iconPrefix?: string;
+export interface InstallOptions {
+    prefix?: string;
 }
 
 export const withInstall = <T extends Component, E extends Record<string, any>>(main: T, extra?: E) => {
-    (main as SFCWithInstall<T>).install = (app: App, options?: ZzuIconOptions): void => {
+    (main as SFCWithInstall<T>).install = (app: App, options?: InstallOptions): void => {
         for (const comp of [main, ...Object.values(extra ?? {})]) {
-            const iconPrefix = options?.iconPrefix ?? '';
-            app.component(`${iconPrefix}${comp.name}`, comp);
+            const prefix = options?.prefix ?? '';
+            app.component(`${prefix}${comp.name}`, comp);
         }
     };
 

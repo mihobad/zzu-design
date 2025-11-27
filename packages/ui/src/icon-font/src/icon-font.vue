@@ -11,7 +11,7 @@ import { isUndefined, addUnit } from '@zzu/utils';
 import { iconFontProps, iconEmits } from './type';
 
 defineOptions({
-    name: 'ZzuIconFont',
+    name: 'Icon',
 });
 
 const { type, size, rotate, spin } = defineProps(iconFontProps);

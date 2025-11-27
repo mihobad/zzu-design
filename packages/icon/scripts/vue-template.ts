@@ -154,14 +154,14 @@ declare module 'vue' {
 
 export const getIcon = ({ imports, components }: { imports: string[]; components: string[] }) => {
     return `import type { App, Plugin } from 'vue';
-import type { ZzuIconOptions } from '@zzu/utils';
+import type { InstallOptions } from '@zzu/utils';
 ${imports.join('\n')}
 
 const icons: Record<string, Plugin> = {
     ${components.join(',\n    ')}
 };
 
-const install = (app: App, options?: ZzuIconOptions) => {
+const install = (app: App, options?: InstallOptions) => {
     for (const key of Object.keys(icons)) {
         app.use(icons[key], options);
     }

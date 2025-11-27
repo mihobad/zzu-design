@@ -13,7 +13,7 @@ import { dividerProps } from './type';
 import type { CSSProperties } from 'vue';
 
 defineOptions({
-    name: 'ZzuDivider',
+    name: 'Divider',
 });
 
 const { direction, contentPosition, borderStyle } = defineProps(dividerProps);

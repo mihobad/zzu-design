@@ -6,6 +6,4 @@
     </div>
 </template>
 
-<script setup lang="ts">
-import { ZzuDivider } from '@zzu/ui';
-</script>
+<script setup lang="ts"></script>

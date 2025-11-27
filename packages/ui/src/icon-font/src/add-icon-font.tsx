@@ -21,7 +21,7 @@ export const addIconFont = (options: IconFontOptions) => {
     }
 
     return defineComponent({
-        name: 'ZzuIconFont',
+        name: 'IconFont',
         props: {
             type: String,
             size: [Number, String],

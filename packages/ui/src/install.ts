@@ -1,13 +1,14 @@
 import type { App, Plugin } from 'vue';
-import { ZzuDivider } from './divider';
-import { ZzuIconFont } from './icon-font';
+import { Divider } from './divider';
+import { IconFont } from './icon-font';
 
-const components = [ZzuDivider, ZzuIconFont];
+const components = [Divider, IconFont];
 
 const makeInstaller = (components: Plugin[] = []) => {
     return {
-        install(app: App) {
-            components.forEach((c) => app.use(c));
+        install(app: App, options: { prefix?: string } = {}) {
+            const { prefix = 'zzu' } = options;
+            components.forEach((c) => app.use(c, { prefix }));
         },
     };
 };
