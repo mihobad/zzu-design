@@ -1,7 +1,8 @@
 import type { App, Plugin } from 'vue';
 import { ZzuDivider } from './divider';
+import { ZzuIconFont } from './icon-font';
 
-const components = [ZzuDivider];
+const components = [ZzuDivider, ZzuIconFont];
 
 const makeInstaller = (components: Plugin[] = []) => {
     return {

@@ -18,11 +18,13 @@
 }
 
 @include b(icon) {
-    display: block;
-    width: 1em;
     height: 1em;
-    outline: none;
-    font-style: normal;
+    width: 1em;
+    line-height: 1em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
     @include when(loading) {
         animation: rotating 2s linear infinite;

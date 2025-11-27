@@ -54,6 +54,14 @@ tree-shaking.vue
 spin.vue
 :::
 
+## iconfont.cn
+
+调用 addIconFont 方法支持 iconfont.cn 图标。
+
+::: code-preview
+icon-font.vue
+:::
+
 ## 图标列表
 
 ::: code-preview
