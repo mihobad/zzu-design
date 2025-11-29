@@ -21,6 +21,7 @@ export default defineConfig({
                 text: '组件库',
                 items: [
                     { text: 'Icon', link: '/demos/icon/index.md' },
+                    { text: 'Button', link: '/demos/button/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
                 ],
             },

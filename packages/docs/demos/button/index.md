@@ -1,0 +1,3 @@
+::: code-preview
+basic.vue
+:::
