@@ -1,28 +1,58 @@
 [
     {
-        "name": "icon-rotate-cw",
-        "componentName": "IconRotateCw",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/rotate-cw.svg"
+        "name": "icon-upload",
+        "componentName": "IconUpload",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/upload.svg"
     },
     {
-        "name": "icon-chevron-up",
-        "componentName": "IconChevronUp",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/chevron-up.svg"
+        "name": "icon-setting",
+        "componentName": "IconSetting",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/setting.svg"
     },
     {
-        "name": "icon-chevron-right",
-        "componentName": "IconChevronRight",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/chevron-right.svg"
+        "name": "icon-search",
+        "componentName": "IconSearch",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/search.svg"
     },
     {
-        "name": "icon-chevron-left",
-        "componentName": "IconChevronLeft",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/chevron-left.svg"
+        "name": "icon-rank",
+        "componentName": "IconRank",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/rank.svg"
     },
     {
-        "name": "icon-chevron-down",
-        "componentName": "IconChevronDown",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/chevron-down.svg"
+        "name": "icon-plus",
+        "componentName": "IconPlus",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/plus.svg"
+    },
+    {
+        "name": "icon-minus",
+        "componentName": "IconMinus",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/minus.svg"
+    },
+    {
+        "name": "icon-loading",
+        "componentName": "IconLoading",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/loading.svg"
+    },
+    {
+        "name": "icon-filter",
+        "componentName": "IconFilter",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/filter.svg"
+    },
+    {
+        "name": "icon-edit",
+        "componentName": "IconEdit",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/edit.svg"
+    },
+    {
+        "name": "icon-d-caret",
+        "componentName": "IconDCaret",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/d-caret.svg"
+    },
+    {
+        "name": "icon-close",
+        "componentName": "IconClose",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/close.svg"
     },
     {
         "name": "icon-check",
@@ -30,8 +60,43 @@
         "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/check.svg"
     },
     {
-        "name": "icon-check-square",
-        "componentName": "IconCheckSquare",
-        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/check-square.svg"
+        "name": "icon-caret-top",
+        "componentName": "IconCaretTop",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/caret-top.svg"
+    },
+    {
+        "name": "icon-caret-right",
+        "componentName": "IconCaretRight",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/caret-right.svg"
+    },
+    {
+        "name": "icon-caret-left",
+        "componentName": "IconCaretLeft",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/caret-left.svg"
+    },
+    {
+        "name": "icon-caret-bottom",
+        "componentName": "IconCaretBottom",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/caret-bottom.svg"
+    },
+    {
+        "name": "icon-arrow-up",
+        "componentName": "IconArrowUp",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/arrow-up.svg"
+    },
+    {
+        "name": "icon-arrow-right",
+        "componentName": "IconArrowRight",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/arrow-right.svg"
+    },
+    {
+        "name": "icon-arrow-left",
+        "componentName": "IconArrowLeft",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/arrow-left.svg"
+    },
+    {
+        "name": "icon-arrow-down",
+        "componentName": "IconArrowDown",
+        "path": "/Users/suxinyi/Desktop/github/zzu-design/packages/icon/source/_svgs/arrow-down.svg"
     }
 ]
