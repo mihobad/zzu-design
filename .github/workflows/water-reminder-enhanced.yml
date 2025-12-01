@@ -1,42 +1,45 @@
 name: Smart Water Reminder
 
 on:
-  schedule:
-    # 工作日 9:00-18:00 每小时执行（UTC时间，对应北京时间 17:00-02:00，需要调整）
-    # 针对北京时间 9:00-18:00 的cron表达式：
-    - cron: '0 1,2,3,4,5,6,7,8,9,10 * * 1-5' # UTC时间 1:00-10:00 = 北京时间 9:00-18:00
-  workflow_dispatch:
+    push:
+        branches:
+            - develop
+    schedule:
+        # 工作日 9:00-18:00 每小时执行（UTC时间，对应北京时间 17:00-02:00，需要调整）
+        # 针对北京时间 9:00-18:00 的cron表达式：
+        - cron: '0 1,2,3,4,5,6,7,8,9,10 * * 1-5' # UTC时间 1:00-10:00 = 北京时间 9:00-18:00
+    workflow_dispatch:
 
 env:
-  TZ: Asia/Shanghai
+    TZ: Asia/Shanghai
 
 jobs:
-  water-reminder:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Send reminder to WeChat
-        run: |
-          # 获取当前小时（北京时间）
-          HOUR=$(date -d "+8 hours" +%H)
-          
-          # 根据不同时段生成不同的提醒消息
-          case $HOUR in
-            "09") MESSAGE="🌞 **早安喝水时间！**\n> 开启新的一天，从一杯温水开始～" ;;
-            "12") MESSAGE="🍱 **午间喝水时间！**\n> 午餐后半小时，喝杯水助消化～" ;;
-            "17") MESSAGE="🌇 **傍晚喝水时间！**\n> 补充水分，为下班前的冲刺加油！" ;;
-            *) MESSAGE="💧 **喝水时间到！**\n> 工作辛苦了，记得补充水分哦～" ;;
-          esac
-          
-          # 发送请求到企业微信
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -d "{
-              \"msgtype\": \"markdown\",
-              \"markdown\": {
-                \"content\": \"$MESSAGE\n\n⏰ 提醒时间: $(date -d '+8 hours' '+%H:%M')\n💧 今日小目标: 8杯水已完成 $(( (10#$HOUR - 8) ))/8杯\"
-              }
-            }" \
-            ${{ secrets.WECHAT_WEBHOOK_URL }}
+    water-reminder:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Send reminder to WeChat
+              run: |
+                  # 获取当前小时（北京时间）
+                  HOUR=$(date -d "+8 hours" +%H)
+
+                  # 根据不同时段生成不同的提醒消息
+                  case $HOUR in
+                    "09") MESSAGE="🌞 **早安喝水时间！**\n> 开启新的一天，从一杯温水开始～" ;;
+                    "12") MESSAGE="🍱 **午间喝水时间！**\n> 午餐后半小时，喝杯水助消化～" ;;
+                    "17") MESSAGE="🌇 **傍晚喝水时间！**\n> 补充水分，为下班前的冲刺加油！" ;;
+                    *) MESSAGE="💧 **喝水时间到！**\n> 工作辛苦了，记得补充水分哦～" ;;
+                  esac
+
+                  # 发送请求到企业微信
+                  curl -X POST \
+                    -H "Content-Type: application/json" \
+                    -d "{
+                      \"msgtype\": \"markdown\",
+                      \"markdown\": {
+                        \"content\": \"$MESSAGE\n\n⏰ 提醒时间: $(date -d '+8 hours' '+%H:%M')\n💧 今日小目标: 8杯水已完成 $(( (10#$HOUR - 8) ))/8杯\"
+                      }
+                    }" \
+                    ${{ secrets.WECHAT_WEBHOOK_URL }}
