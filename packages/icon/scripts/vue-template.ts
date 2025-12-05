@@ -21,7 +21,7 @@ export function replaceColorsWithCssVars(svgHtml: string, colors: string[]): str
 
     colors.forEach((color, index) => {
         const colorRegex = new RegExp(`(stroke|fill)="${color}"`, 'g');
-        modifiedSvg = modifiedSvg.replace(colorRegex, `$1="var(--zzu-icon-color-${index}, ${color})"`);
+        modifiedSvg = modifiedSvg.replace(colorRegex, `$1="var(--zzu-icon-color-${index}, currentColor)"`);
     });
 
     return modifiedSvg;
