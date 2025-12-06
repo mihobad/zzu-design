@@ -3,7 +3,6 @@ import fs from 'fs-extra';
 import { globSync } from 'glob';
 import { optimize } from 'svgo';
 import { JSDOM } from 'jsdom';
-import { toPascalCase } from '@zzu/utils';
 import { svgoConfig } from './svgo.config';
 import { getIconIndex, getIconType, getIconVue, getIcon, getIndex } from './vue-template';
 
@@ -14,6 +13,21 @@ interface IconData {
 }
 
 const cwd = process.cwd();
+
+/**
+ * 转换为帕斯卡命名法
+ * @param string 字符串
+ * @returns 帕斯卡命名法字符串
+ * @example
+ * toPascalCase('hello-world'); // 'HelloWorld'
+ */
+export const toPascalCase = (string: string): string => {
+    return string
+        .replace(/^./, (match) => match.toLocaleUpperCase())
+        .replace(/-(.)/g, (_, p1: string) => {
+            return p1.toLocaleUpperCase();
+        });
+};
 
 function getSVGData(): IconData[] {
     const data: IconData[] = [];
