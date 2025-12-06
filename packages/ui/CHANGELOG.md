@@ -1,5 +1,11 @@
 # @zzu/ui
 
+## 1.0.3
+
+### Patch Changes
+
+- b572137: add button group
+
 ## 1.0.2
 
 ### Patch Changes
