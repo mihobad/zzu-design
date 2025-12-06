@@ -32,7 +32,15 @@ loading.vue
 link.vue
 :::
 
-## API
+## 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+::: code-preview
+group.vue
+:::
+
+## Button API
 
 ### 属性
 
@@ -48,8 +56,10 @@ link.vue
 | disabled | 是否禁用       | boolean                                                                | false     |
 | icon     | `Icon` 组件    | Component                                                              | null      |
 
-### 事件
+## ButtonGroup API
 
-| 事件名 | 说明     | 回调参数          |
-| ------ | -------- | ----------------- |
-| click  | 点击事件 | (evt: MouseEvent) |
+| 属性      | 说明 | 类型                                                                   | 默认值       |
+| --------- | ---- | ---------------------------------------------------------------------- | ------------ |
+| direction | 方向 | `horizontal` \| `vertical`                                             | 'horizontal' |
+| size      | 尺寸 | `large` \| `default` \| `small`                                        | ''           |
+| type      | 类型 | `default` \| `primary` \| `success` \| `warning` \| `info` \| `danger` | ''           |

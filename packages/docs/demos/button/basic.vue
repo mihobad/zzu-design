@@ -35,6 +35,24 @@
             <zzu-button type="warning" circle :icon="IconPlus"></zzu-button>
             <zzu-button type="danger" circle :icon="IconSetting"></zzu-button>
         </div>
+
+        <div>
+            <zzu-button size="large">Default</zzu-button>
+            <zzu-button size="large" type="primary">Primary</zzu-button>
+            <zzu-button size="large" type="success">Success</zzu-button>
+            <zzu-button size="large" type="info">Info</zzu-button>
+            <zzu-button size="large" type="warning">Warning</zzu-button>
+            <zzu-button size="large" type="danger">Danger</zzu-button>
+        </div>
+
+        <div>
+            <zzu-button size="small">Default</zzu-button>
+            <zzu-button size="small" type="primary">Primary</zzu-button>
+            <zzu-button size="small" type="success">Success</zzu-button>
+            <zzu-button size="small" type="info">Info</zzu-button>
+            <zzu-button size="small" type="warning">Warning</zzu-button>
+            <zzu-button size="small" type="danger">Danger</zzu-button>
+        </div>
     </div>
 </template>
 

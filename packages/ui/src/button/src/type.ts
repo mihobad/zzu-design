@@ -39,3 +39,14 @@ export const buttonEmits = {
 
 export type ButtonProps = ExtractPropTypes<typeof buttonProps>;
 export type ButtonEmits = typeof buttonEmits;
+
+export const buttonGroupProps = {
+    size: buttonProps.size,
+    type: buttonProps.type,
+    direction: {
+        type: String as PropType<'horizontal' | 'vertical'>,
+        default: 'horizontal',
+    },
+};
+
+export type ButtonGroupProps = ExtractPropTypes<typeof buttonGroupProps>;

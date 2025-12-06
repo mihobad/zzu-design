@@ -7,6 +7,7 @@
 @use 'config' as *;
 @forward 'config';
 @forward 'function';
+@forward 'utils';
 
 // set css var value, because we need translate value to string
 // for example:
