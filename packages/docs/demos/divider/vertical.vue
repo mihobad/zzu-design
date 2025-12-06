@@ -1,10 +1,10 @@
 <template>
     <div>
-        <span>Rain</span>
+        <span>🍌</span>
         <zzu-divider direction="vertical" />
-        <span>Home</span>
+        <span>🍎</span>
         <zzu-divider direction="vertical" border-style="dashed" />
-        <span>Grass</span>
+        <span>🍏</span>
     </div>
 </template>
 

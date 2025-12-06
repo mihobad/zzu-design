@@ -1,8 +1,9 @@
 import type { App, Plugin } from 'vue';
 import { Divider } from './divider';
 import { IconFont } from './icon-font';
+import { Button } from './button';
 
-const components = [Divider, IconFont];
+const components = [Divider, IconFont, Button];
 
 const makeInstaller = (components: Plugin[] = []) => {
     return {

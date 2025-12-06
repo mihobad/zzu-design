@@ -28,15 +28,15 @@ app.mount('#app');
 
 ### Props
 
-| 参数名         | 描述     | 类型                    | 说明         | 默认值 |
-| -------------- | -------- | ----------------------- | ------------ | ------ |
-| size           | 图标大小 | Number                  | 图标大小     | 24     |
-| strokeWidth    | 线宽     | Number                  | 图标线宽     | 2      |
-| strokeLinecap  | 线帽     | butt \| round \| square | 图标线帽     | butt   |
-| strokeLinejoin | 线接     | miter \| round \| bevel | 图标线接     | miter  |
-| rotate         | 旋转角度 | Number                  | 图标旋转角度 | 0      |
-| spin           | 旋转动画 | Boolean                 | 图标旋转动画 | false  |
-| color          | 图标颜色 | String \| Array         | 图标颜色     | -      |
+| 参数名         | 说明     | 类型                                    | 默认值  |
+| -------------- | -------- | --------------------------------------- | ------- |
+| size           | 图标大小 | Number                                  | 24      |
+| strokeWidth    | 线宽     | Number                                  | 2       |
+| strokeLinecap  | 线帽     | `butt` \| `round` \| `square` \| `butt` | `butt`  |
+| strokeLinejoin | 线接     | `miter` \| `round` \| `bevel`           | `miter` |
+| rotate         | 旋转角度 | Number                                  | 0       |
+| spin           | 旋转动画 | Boolean                                 | false   |
+| color          | 图标颜色 | `String` \| `Array`                     | -       |
 
 ## 按需加载
 

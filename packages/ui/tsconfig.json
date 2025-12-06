@@ -7,6 +7,10 @@
         "jsx": "preserve",
         "jsxImportSource": "vue",
         "allowImportingTsExtensions": true,
-        "resolvePackageJsonImports": true
+        "resolvePackageJsonImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
     }
 }

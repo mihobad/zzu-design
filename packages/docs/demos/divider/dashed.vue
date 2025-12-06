@@ -1,8 +1,8 @@
 <template>
     <div>
-        <span>What language is thine, O sea?</span>
+        <span>海水呀,你说的是什么?</span>
         <zzu-divider border-style="dashed" />
-        <span>The language of eternal question.</span>
+        <span>是永恒的疑问。</span>
     </div>
 </template>
 

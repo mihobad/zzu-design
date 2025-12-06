@@ -9,6 +9,9 @@ export default defineConfig(() => ({
     clean: false,
     minify: true,
     plugins: [Vue({ isProduction: true }), VueJsx(), scss({ fileName: 'index.css' })],
+    alias: {
+        '@/': 'src/',
+    },
     unbundle: true,
     dts: {
         vue: true,

@@ -1,32 +1,32 @@
-@use 'sass:math';
 @use 'sass:map';
+@use 'sass:math';
 @use 'sass:color';
 
-@use '../mixins/function' as *;
+@use './mixins/mixins' as *;
 
-// types
+// ========== 基础变量 ==========
 $types: primary, success, warning, danger, error, info;
 
-// Color
+// ========== 颜色变量 ==========
 $colors: () !default;
 $colors: map.deep-merge(
     (
         'white': #ffffff,
         'black': #000000,
         'primary': (
-            'base': #409eff,
+            'base': #1677ff,
         ),
         'success': (
-            'base': #67c23a,
+            'base': #52c41a,
         ),
         'warning': (
-            'base': #e6a23c,
-        ),
-        'danger': (
-            'base': #f56c6c,
+            'base': #faad14,
         ),
         'error': (
-            'base': #f56c6c,
+            'base': #ff4d4f,
+        ),
+        'danger': (
+            'base': #ff4d4f,
         ),
         'info': (
             'base': #909399,
@@ -44,28 +44,8 @@ $color-danger: map.get($colors, 'danger', 'base') !default;
 $color-error: map.get($colors, 'error', 'base') !default;
 $color-info: map.get($colors, 'info', 'base') !default;
 
-@mixin set-color-mix-level($type, $number, $mode: 'light', $mix-color: $color-white) {
-    $colors: map.deep-merge(
-        (
-            $type: (
-                '#{$mode}-#{$number}': roundColor(color.mix($mix-color, map.get($colors, $type, 'base'), math.percentage(math.div($number, 10)))),
-            ),
-        ),
-        $colors
-    ) !global;
-}
-
 // $colors.primary.light-i
 // --zzu-color-primary-light-i
-// 10% 53a8ff
-// 20% 66b1ff
-// 30% 79bbff
-// 40% 8cc5ff
-// 50% a0cfff
-// 60% b3d8ff
-// 70% c6e2ff
-// 80% d9ecff
-// 90% ecf5ff
 @each $type in $types {
     @for $i from 1 through 9 {
         @include set-color-mix-level($type, $i, 'light', $color-white);
@@ -77,31 +57,35 @@ $color-info: map.get($colors, 'info', 'base') !default;
     @include set-color-mix-level($type, 2, 'dark', $color-black);
 }
 
+// ========== 文本颜色变量 ==========
+
 $text-color: () !default;
 $text-color: map.merge(
     (
-        'primary': #303133,
-        'regular': #606266,
-        'secondary': #909399,
-        'placeholder': #a8abb2,
-        'disabled': #c0c4cc,
+        'primary': #1a1a1a,
+        'regular': #4a4a4a,
+        'secondary': #8c8c8c,
+        'placeholder': #bfbfbf,
+        'disabled': #d9d9d9,
     ),
     $text-color
 );
 
+// ========== 边框颜色变量 ==========
 $border-color: () !default;
 $border-color: map.merge(
     (
-        '': #dcdfe6,
-        'light': #e4e7ed,
-        'lighter': #ebeef5,
-        'extra-light': #f2f6fc,
-        'dark': #d4d7de,
-        'darker': #cdd0d6,
+        '': #d9d9d9,
+        'light': #e8e8e8,
+        'lighter': #f0f0f0,
+        'extra-light': #f5f5f5,
+        'dark': #bfbfbf,
+        'darker': #999999,
     ),
     $border-color
 );
 
+// ========== 填充颜色变量 ==========
 $fill-color: () !default;
 $fill-color: map.merge(
     (
@@ -116,7 +100,7 @@ $fill-color: map.merge(
     $fill-color
 );
 
-// Background
+// ========== 背景颜色变量 ==========
 $bg-color: () !default;
 $bg-color: map.merge(
     (
@@ -127,10 +111,10 @@ $bg-color: map.merge(
     $bg-color
 );
 
-// Border
+// ========== 边框变量 ==========
 $border-width: 1px !default;
 $border-style: solid !default;
-$border-color-hover: getCssVar('text-color', 'disabled') !default;
+$border-color-hover: map.get($border-color, 'light') !default;
 
 $border-radius: () !default;
 $border-radius: map.merge(
@@ -143,7 +127,7 @@ $border-radius: map.merge(
     $border-radius
 );
 
-// Box-shadow
+// ========== 阴影变量 ==========
 $box-shadow: () !default;
 $box-shadow: map.merge(
     (
@@ -166,7 +150,7 @@ $box-shadow: map.merge(
     $box-shadow
 );
 
-// Typography
+// ========== 字体变量 ==========
 $font-family: () !default;
 $font-family: map.merge(
     (
@@ -189,7 +173,7 @@ $font-size: map.merge(
     $font-size
 );
 
-// zIndex
+// ========== z-index 变量 ==========
 $z-index: () !default;
 $z-index: map.merge(
     (
@@ -200,17 +184,18 @@ $z-index: map.merge(
     $z-index
 );
 
-// Disable default
+// ========== 禁用状态变量 ==========
 $disabled: () !default;
 $disabled: map.merge(
     (
-        'bg-color': getCssVar('fill-color', 'light'),
-        'text-color': getCssVar('text-color', 'placeholder'),
-        'border-color': getCssVar('border-color', 'light'),
+        'bg-color': map.get($fill-color, 'light'),
+        'text-color': map.get($text-color, 'placeholder'),
+        'border-color': map.get($border-color, 'light'),
     ),
     $disabled
 );
 
+// ========== 通用组件尺寸变量 ==========
 $common-component-size: () !default;
 $common-component-size: map.merge(
     (
@@ -221,7 +206,7 @@ $common-component-size: map.merge(
     $common-component-size
 );
 
-// overlay
+// ========== 遮罩颜色变量 ==========
 $overlay-color: () !default;
 $overlay-color: map.merge(
     (
@@ -232,7 +217,6 @@ $overlay-color: map.merge(
     $overlay-color
 );
 
-// mask
 $mask-color: () !default;
 $mask-color: map.merge(
     (
@@ -240,4 +224,40 @@ $mask-color: map.merge(
         'extra-light': rgba(255, 255, 255, 0.3),
     ),
     $mask-color
+);
+
+// ========== 过渡变量 ==========
+$transition-duration: () !default;
+$transition-duration: map.merge(
+    (
+        '': 0.3s,
+        'fast': 0.2s,
+    ),
+    $transition-duration
+);
+
+$transition-function: () !default;
+$transition-function: map.merge(
+    (
+        'ease-in-out-bezier': cubic-bezier(0.645, 0.045, 0.355, 1),
+        'fast-bezier': cubic-bezier(0.23, 1, 0.32, 1),
+    ),
+    $transition-function
+);
+
+$transition: () !default;
+$transition: map.merge(
+    (
+        'all': all map.get($transition-duration, '') map.get($transition-function, 'ease-in-out-bezier'),
+        'fade': opacity map.get($transition-duration, '') map.get($transition-function, 'fast-bezier'),
+        'md-fade': (
+            transform map.get($transition-duration, '') map.get($transition-function, 'fast-bezier'),
+            opacity map.get($transition-duration, '') map.get($transition-function, 'fast-bezier'),
+        ),
+        'fade-linear': opacity map.get($transition-duration, 'fast') linear,
+        'border': border-color map.get($transition-duration, 'fast') map.get($transition-function, 'ease-in-out-bezier'),
+        'box-shadow': box-shadow map.get($transition-duration, 'fast') map.get($transition-function, 'ease-in-out-bezier'),
+        'color': color map.get($transition-duration, 'fast') map.get($transition-function, 'ease-in-out-bezier'),
+    ),
+    $transition
 );

@@ -1,8 +1,8 @@
 <template>
     <div>
-        <span> 我在窗上这一早上，站在这一 moment，世界像一个过客，对我 nods，然后走了。 </span>
+        <span>锦瑟无端五十弦，一弦一柱思华年。</span>
         <zzu-divider />
-        <span> 有一天，我在窗上看了看，发现有个人在等我。 </span>
+        <span>庄生晓梦迷蝴蝶，望帝春心托杜鹃。</span>
     </div>
 </template>
 

@@ -2,22 +2,43 @@
 @use 'sass:math';
 @use 'sass:color';
 
-@use '../common/var.scss' as common;
-@use '../mixins/mixins.scss' as *;
-@use '../color/index.scss' as *;
-@use '../mixins/function.scss' as *;
+@use '../var' as common;
+@use '../mixins/mixins' as *;
 
 $colors: () !default;
-@each $type in common.$types {
-    $colors: map.deep-merge(
-        (
-            $type: (
-                    'base': map.get(common.$colors, $type, 'base'),
-                ),
+
+// 从 common 模块导入单个颜色变量，避免访问 common.$colors
+$primary-color: common.$color-primary;
+$success-color: common.$color-success;
+$warning-color: common.$color-warning;
+$danger-color: common.$color-danger;
+$error-color: common.$color-error;
+$info-color: common.$color-info;
+
+// 构建 $colors 映射
+$colors: map.deep-merge(
+    (
+        'primary': (
+            base: $primary-color,
         ),
-        $colors
-    ) !global;
-}
+        'success': (
+            base: $success-color,
+        ),
+        'warning': (
+            base: $warning-color,
+        ),
+        'danger': (
+            base: $danger-color,
+        ),
+        'error': (
+            base: $error-color,
+        ),
+        'info': (
+            base: $info-color,
+        ),
+    ),
+    $colors
+) !global;
 
 // https://sass-lang.com/documentation/values/maps#immutability
 // mix colors with white/black to generate light/dark level
@@ -31,17 +52,6 @@ $colors: () !default;
         ),
         $colors
     ) !global;
-
-    // for designer to view transparent
-    // $colors: map.deep-merge(
-    //   (
-    //     $type: (
-    //       '#{$mode}-#{$number}':
-    //         rgba(map.get($colors, $type, 'base'), math.div(10 - $number, 10)),
-    //     ),
-    //   ),
-    //   $colors
-    // ) !global;
 }
 
 // Background

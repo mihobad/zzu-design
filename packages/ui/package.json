@@ -64,6 +64,7 @@
         "vue": "^3.5.22"
     },
     "dependencies": {
+        "@zzu/icon": "workspace:*",
         "@zzu/use": "workspace:*",
         "@zzu/utils": "workspace:*"
     }

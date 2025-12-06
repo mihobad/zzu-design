@@ -207,6 +207,9 @@ importers:
 
     packages/ui:
         dependencies:
+            '@zzu/icon':
+                specifier: workspace:*
+                version: link:../icon
             '@zzu/use':
                 specifier: workspace:*
                 version: link:../use

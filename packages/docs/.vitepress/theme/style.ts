@@ -4,4 +4,4 @@ import 'normalize.css';
 import '@zzu/ui/style/index.css';
 
 // for dark mode
-import '@zzu/ui/style/dark/css-vars.css';
+import '@zzu/ui/style/dark/css-variables.css';
