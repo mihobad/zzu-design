@@ -20,6 +20,7 @@ export default defineConfig({
             {
                 text: '组件库',
                 items: [
+                    { text: '快速开始', link: '/demos/getting-started/index.md' },
                     { text: 'Icon', link: '/demos/icon/index.md' },
                     { text: 'Button', link: '/demos/button/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
@@ -27,7 +28,7 @@ export default defineConfig({
             },
         ],
 
-        socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
+        socialLinks: [{ icon: 'github', link: 'https://github.com/mihobad/zzu-design' }],
     },
     vite: {
         resolve: {
