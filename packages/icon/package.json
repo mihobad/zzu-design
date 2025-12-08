@@ -44,7 +44,7 @@
         "rollup-plugin-scss": "^4.0.1",
         "sass": "^1.93.2",
         "svgo": "^4.0.0",
-        "tsdown": "^0.15.12",
+        "tsdown": "^0.17.0",
         "unplugin-vue": "^7.0.4",
         "vue": "^3.5.22",
         "vue-tsc": "^3.1.2"
