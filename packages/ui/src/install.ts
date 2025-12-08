@@ -2,8 +2,9 @@ import type { App, Plugin } from 'vue';
 import { Divider } from './divider';
 import { IconFont } from './icon-font';
 import { Button } from './button';
+import { Overlay } from './overlay';
 
-const components = [Divider, IconFont, Button];
+const components = [Divider, IconFont, Button, Overlay];
 
 const makeInstaller = (components: Plugin[] = []) => {
     return {
