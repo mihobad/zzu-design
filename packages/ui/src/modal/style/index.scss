@@ -1,0 +1,30 @@
+@use '../../style/mixins/mixins.scss' as *;
+
+.#{$namespace}-modal-fade-enter-from,
+.#{$namespace}-modal-fade-leave-to {
+    opacity: 0;
+}
+
+.#{$namespace}-modal-overlay {
+    transition: opacity getCssVar('transition-duration');
+
+    &.is-penetrable {
+        pointer-events: none;
+
+        .#{$namespace}-dialog {
+            pointer-events: auto;
+        }
+    }
+}
+
+.#{$namespace}-modal-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}

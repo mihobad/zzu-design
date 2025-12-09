@@ -1,4 +1,4 @@
-import type { ExtractPropTypes } from 'vue';
+import type { ExtractPropTypes, PropType } from 'vue';
 
 export const overlayProps = {
     mask: {
@@ -7,7 +7,7 @@ export const overlayProps = {
     },
     customMaskEvent: Boolean,
     overlayClass: {
-        type: String,
+        type: Array as PropType<string | string[] | Record<string, boolean>>,
         default: '',
     },
     zIndex: {

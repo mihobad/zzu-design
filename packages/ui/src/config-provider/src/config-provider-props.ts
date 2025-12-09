@@ -10,6 +10,10 @@ export const configProviderProps = {
         type: String,
         default: 'zzu',
     },
+    /**
+     * @description global Initial zIndex
+     */
+    zIndex: Number,
 };
 
 export type ConfigProviderProps = ExtractPropTypes<typeof configProviderProps>;

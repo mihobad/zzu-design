@@ -1,5 +1,5 @@
 {
-    "cSpell.words": ["commitlint", "yuanjie"],
+    "cSpell.words": ["commitlint", "vnode", "yuanjie"],
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "explorer.fileNesting.enabled": true,

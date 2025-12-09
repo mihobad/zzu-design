@@ -24,6 +24,7 @@ export default defineConfig({
                     { text: 'Icon', link: '/demos/icon/index.md' },
                     { text: 'Button', link: '/demos/button/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
+                    { text: 'Modal', link: '/demos/modal/index.md' },
                 ],
             },
         ],
