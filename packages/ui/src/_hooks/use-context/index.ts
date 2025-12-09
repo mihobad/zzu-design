@@ -1,11 +1,11 @@
-import { ref, type AppContext } from 'vue';
+import { ref, type AppContext, type Ref } from 'vue';
 
-const appContext = ref<AppContext>();
+const globalAppContext = ref<AppContext>();
 
-export function useContext(context?: AppContext): AppContext {
-    if (context) {
-        appContext.value = context;
-    }
+export function setAppContext(context: AppContext): void {
+    globalAppContext.value = context;
+}
 
-    return appContext.value!;
+export function useAppContext(): Ref<AppContext | undefined> {
+    return globalAppContext;
 }

@@ -1,7 +1,7 @@
 import { createVNode, render, type AppContext, type Component } from 'vue';
 import ModalConstructor from './modal.vue';
 import type { ModalOptions } from './type';
-import { useContext } from '@/_hooks';
+import { useAppContext } from '@/_hooks';
 
 let seed = 1;
 
@@ -31,7 +31,7 @@ const showModal = (Comp: Component, options?: ModalOptions) => {
 
     const vnode = createVNode(ModalConstructor, _props, { default: () => createVNode(Comp, { onClose: _props.onClose }) });
 
-    vnode.appContext = useContext();
+    vnode.appContext = useAppContext().value!;
 
     render(vnode, container);
 

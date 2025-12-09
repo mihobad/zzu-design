@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <zzu-button @click="openModal">打开弹窗</zzu-button>
-    </div>
+    <zzu-button @click="openModal">打开弹窗</zzu-button>
 </template>
 
 <script setup lang="ts">
@@ -13,9 +11,9 @@ const openModal = () => {
         onClose: () => {
             console.log('close modal');
         },
-        mask: true,
+        overlay: true,
         overlayPenetrable: false,
-        // closeOnClickModal: false,
+        closeOnClickOverlay: true,
     });
 };
 </script>

@@ -5,25 +5,29 @@ export const modalProps = {
         type: Function as PropType<() => void>,
         default: undefined,
     },
-    closeOnClickModal: {
+    closeOnClickOverlay: {
         type: Boolean,
         default: true,
     },
     zIndex: [Number, String],
+    overlay: {
+        type: Boolean,
+        default: true,
+    },
+    overlayClass: {
+        type: String as PropType<string | string[] | Record<string, boolean>>,
+        default: '',
+    },
+    overlayStyle: {
+        type: Object as PropType<Record<string, string | number>>,
+        default: () => ({}),
+    },
     /**
      * 遮罩是否可穿透
      */
     overlayPenetrable: {
         type: Boolean,
         default: false,
-    },
-    mask: {
-        type: Boolean,
-        default: true,
-    },
-    overlayClass: {
-        type: String,
-        default: '',
     },
 };
 

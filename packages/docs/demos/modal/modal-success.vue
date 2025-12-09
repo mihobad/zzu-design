@@ -19,8 +19,7 @@ console.log(data);
 
 <style lang="scss" scoped>
 .modal-suc {
-    height: 105px;
-    padding-top: 17px;
+    padding-top: 12px;
     background-size: 100% 100%;
     font-size: 16px;
     line-height: 28px;

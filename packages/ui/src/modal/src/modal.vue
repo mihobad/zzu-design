@@ -1,25 +1,23 @@
 <template>
     <transition :name="ns.b('fade')" @before-enter="isStartTransition = true" @before-leave="onClose" @after-leave="$emit('destroy')" appear>
-        <overlay
+        <div
             v-show="visible"
-            custom-mask-event
-            :z-index="zIdx"
-            :mask="!penetrable && mask"
-            :overlay-class="[overlayClass ?? '', `${ns.namespace.value}-modal-overlay`, ns.is('penetrable', penetrable)]"
+            :class="[ns.b(), ns.is('penetrable', penetrable), overlay ? ns.m('overlay') : '', overlayClass]"
+            :style="overlayStyle"
+            @click="onClick"
+            @mousedown="onMouseDown"
+            @mouseup="onMouseUp"
         >
-            <div :class="`${ns.namespace.value}-modal-wrapper`" @click="onClick" @mousedown="onMouseDown" @mouseup="onMouseUp">
-                <div :class="ns.b()">
-                    <slot></slot>
-                </div>
+            <div :class="ns.b('wrapper')">
+                <slot></slot>
             </div>
-        </overlay>
+        </div>
     </transition>
 </template>
 
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref, Transition } from 'vue';
 import { modalProps, modalEmits } from './type';
-import Overlay from '../../overlay';
 import { useGlobalComponentSettings } from '@/config-provider';
 import { useSameTarget } from '@zzu/use';
 
@@ -36,8 +34,13 @@ const zIdx = computed(() => props.zIndex ?? currentZIndex.value);
 
 const penetrable = computed(() => props.overlayPenetrable);
 
+const overlayStyle = computed(() => ({
+    ...props.overlayStyle,
+    zIndex: zIdx.value,
+}));
+
 const onMaskClick = (e: MouseEvent) => {
-    if (props.closeOnClickModal) {
+    if (props.closeOnClickOverlay) {
         close();
     }
 };

@@ -38,41 +38,16 @@ const close = () => {
 <style lang="scss" scoped>
 .modal-wrapper {
     position: relative;
-    width: 332px;
-    background: rgba(193, 255, 186, 0.6);
+    width: 320px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px 0px rgba(255, 175, 47, 0.41);
     border-radius: 12px;
-    padding: 35px 0;
+    padding: 20px 0;
     margin: 0 auto;
-
-    &-title {
-        position: relative;
-        z-index: 0;
-        width: 248px;
-        height: 43px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: rgba(115, 144, 103, 1);
-        backdrop-filter: blur(35px);
-        box-shadow: 0px 2px 10px 0px rgba(81, 125, 146, 0.11);
-        border-radius: 8px;
-        border: 1px solid linear-gradient(#ffffff 30.56%, #ffffff 69.44%, #ffffff 100%);
-
-        span {
-            font-size: 18px;
-            line-height: 27px;
-            color: #fff;
-            font-family: '$v-500', '$s-500';
-            margin: 0 18px;
-        }
-    }
 
     &-content {
         position: relative;
         z-index: 1;
-        margin-top: -10px;
-        font-family: '$v-300', '$s-300';
     }
 
     &-close {
@@ -80,6 +55,7 @@ const close = () => {
         height: 32px;
         margin: 0 auto;
         margin-top: 15px;
+        cursor: pointer;
     }
 }
 </style>

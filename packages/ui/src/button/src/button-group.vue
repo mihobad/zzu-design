@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { provide, reactive, toRef } from 'vue';
+import { provide, reactive, toRef, ref } from 'vue';
 import { useNamespace } from '@zzu/use';
 import { buttonGroupProps } from './type';
 import { buttonGroupContextKey } from './constants';

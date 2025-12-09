@@ -22,6 +22,7 @@ export default defineConfig({
                 items: [
                     { text: '快速开始', link: '/demos/getting-started/index.md' },
                     { text: 'Icon', link: '/demos/icon/index.md' },
+                    { text: 'ConfigProvider', link: '/demos/config-provider/index.md' },
                     { text: 'Button', link: '/demos/button/index.md' },
                     { text: 'Divider', link: '/demos/divider/index.md' },
                     { text: 'Modal', link: '/demos/modal/index.md' },
